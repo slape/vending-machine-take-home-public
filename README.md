@@ -7,4 +7,4 @@
 - Run `pip install -r requirements.txt`
 
 ## Execution Instructions
-- Run with `python3 main.py`
+- Run with `python3 src/main.py`

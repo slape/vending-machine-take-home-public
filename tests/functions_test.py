@@ -1,21 +1,23 @@
-from src.helper_functions import select_product
+from helper_functions import *
+
+items = read_items()
 
 
 def select_product_test():
     """Test to see if a selected producet is correctly despensed."""
-    selection = select_product(1)
-    assert selection == ["coke", "THANK YOU"], "Failed"
+    selection = select_product(items, 1)
+    assert selection == "cola", "Failed"
     selection = select_product(2)
-    assert selection == ["chips", "THANK YOU"], "Failed"
+    assert selection == "chips", "Failed"
     selection = select_product(3)
-    assert selection == ["candy", "THANK YOU"], "Failed"
+    assert selection == "candy", "Failed"
     selection = select_product(4)
-    assert selection == ["invalid selection", "Try Again"], "Failed"
+    assert selection == "invalid selection", "Failed"
     selection = select_product("coke")
-    assert selection == ["invalid selection", "Try Again"], "Failed"
+    assert selection == "invalid selection", "Failed"
     selection = select_product("asdfas")
-    assert selection == ["invalid selection", "Try Again"], "Failed"
+    assert selection == "invalid selection", "Failed"
     selection = select_product("234")
-    assert selection == ["invalid selection", "Try Again"], "Failed"
+    assert selection == "invalid selection", "Failed"
     selection = select_product("@#$")
-    assert selection == ["invalid selection", "Try Again"], "Failed"
+    assert selection == "invalid selection", "Failed"

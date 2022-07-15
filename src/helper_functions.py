@@ -8,10 +8,10 @@ class VendingMachine():
         self.items = items
         self.credit = credit
 
-    def display_credit(self):
-        print(f"Credit: {self.credit}")
+    def display_credit(self) -> None:
+        print(f'Credit: {self.credit}')
 
-    def display_options(self):
+    def display_options(self) -> None:
         for num, item in enumerate(self.items):
             print(num, item['name'], item['price'])
 
@@ -22,14 +22,8 @@ def read_items() -> dict:
     return items
 
 
-def select_product(selection: int) -> tuple:
-    """
-    As a vendor
-    I want customers to select products
-    So that I can give them products
-
-    There are three products:
-    cola, chips, and candy.
-    When the respective button is pressed,
-    the product is dispensed and the machine displays THANK YOU.
-    """
+def select_product(items: dict, selection: int) -> tuple:
+    for num, item in enumerate(items):
+        if num == selection:
+            print(f'You chose {item["name"]}, THANK YOU')
+            return [item['name']]

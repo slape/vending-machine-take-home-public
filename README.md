@@ -1,4 +1,5 @@
 ## This is a simple vending machine brains app.
+- It is what I could complete of this assesment in 2 hours.
 
 ## Installation Instructions
 
